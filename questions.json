@@ -1,0 +1,808 @@
+{
+  "meta": {
+    "version": "1.0",
+    "total_questions": 52,
+    "languages": {
+      "english_philosophy": 10,
+      "hindi": 10,
+      "punjabi": 10,
+      "tamil": 10,
+      "english_cross_domain_and_hard": 9,
+      "english_nyaya_specific": 3
+    },
+    "domains": {
+      "consciousness_identity": 6,
+      "ethics_moral_realism": 5,
+      "logic_mathematical_truth": 5,
+      "time_causation": 4,
+      "language_thought": 5,
+      "political_philosophy": 5,
+      "aesthetics_art": 5,
+      "free_will": 5,
+      "knowledge_skepticism": 4,
+      "god_existence": 5,
+      "nyaya_epistemic": 3
+    }
+  },
+  "questions": [
+    {
+      "id": "NB-001",
+      "question": "Is consciousness reducible to brain states?",
+      "language": "english",
+      "domain": "consciousness_identity",
+      "expected_purvapaksha_sources": [
+        "Chalmers",
+        "Nagel",
+        "Dharmakirti",
+        "Dignaga",
+        "Shankara",
+        "Descartes"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-002",
+      "question": "Is personal identity constituted by psychological continuity or physical continuity?",
+      "language": "english",
+      "domain": "consciousness_identity",
+      "expected_purvapaksha_sources": [
+        "Locke",
+        "Parfit",
+        "Hume",
+        "Nagarjuna",
+        "Vatsyayana",
+        "Buddhist"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-003",
+      "question": "Are moral facts objective, mind-independent truths about the world?",
+      "language": "english",
+      "domain": "ethics_moral_realism",
+      "expected_purvapaksha_sources": [
+        "Mackie",
+        "Blackburn",
+        "Kumarila",
+        "Mimamsa",
+        "Kant",
+        "Moore"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-004",
+      "question": "Is mathematical truth discovered or invented by the human mind?",
+      "language": "english",
+      "domain": "logic_mathematical_truth",
+      "expected_purvapaksha_sources": [
+        "Frege",
+        "Brouwer",
+        "Wittgenstein",
+        "Godel",
+        "Gangesa",
+        "Nyaya"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-005",
+      "question": "Does language shape thought, or does thought precede and determine language?",
+      "language": "english",
+      "domain": "language_thought",
+      "expected_purvapaksha_sources": [
+        "Whorf",
+        "Chomsky",
+        "Bhartrhari",
+        "Dignaga",
+        "Wittgenstein"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-006",
+      "question": "Is the existence of God provable through reason alone?",
+      "language": "english",
+      "domain": "god_existence",
+      "expected_purvapaksha_sources": [
+        "Udayana",
+        "Anselm",
+        "Kant",
+        "Hume",
+        "Nagarjuna",
+        "Carvaka"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-007",
+      "question": "Is knowledge possible in the face of radical skeptical hypotheses?",
+      "language": "english",
+      "domain": "knowledge_skepticism",
+      "expected_purvapaksha_sources": [
+        "Descartes",
+        "Jayarasi",
+        "Carvaka",
+        "Vatsyayana",
+        "Moore",
+        "Wittgenstein"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-008",
+      "question": "Do human beings possess genuine free will, or are all actions causally determined?",
+      "language": "english",
+      "domain": "free_will",
+      "expected_purvapaksha_sources": [
+        "Spinoza",
+        "Frankfurt",
+        "Samkhya",
+        "Dharmakirti",
+        "Kant",
+        "Hume"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-009",
+      "question": "Is political authority ever legitimate, and what is the basis of political obligation?",
+      "language": "english",
+      "domain": "political_philosophy",
+      "expected_purvapaksha_sources": [
+        "Rawls",
+        "Locke",
+        "Rousseau",
+        "Kautilya",
+        "Manusmriti",
+        "Aristotle"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-010",
+      "question": "Is aesthetic value objective or entirely in the eye of the beholder?",
+      "language": "english",
+      "domain": "aesthetics_art",
+      "expected_purvapaksha_sources": [
+        "Hume",
+        "Kant",
+        "Bharata",
+        "Abhinavagupta",
+        "Dickie",
+        "Beardsley"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-011",
+      "question": "क्या चेतना केवल मस्तिष्क की अवस्थाओं तक सीमित है, या इसकी एक स्वतंत्र सत्ता है?",
+      "language": "hindi",
+      "domain": "consciousness_identity",
+      "expected_purvapaksha_sources": [
+        "शंकर",
+        "धर्मकीर्ति",
+        "रामानुज",
+        "चार्वाक",
+        "नागार्जुन",
+        "Chalmers"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-012",
+      "question": "क्या नैतिक मूल्य वस्तुनिष्ठ हैं या वे केवल सामाजिक सहमति पर आधारित हैं?",
+      "language": "hindi",
+      "domain": "ethics_moral_realism",
+      "expected_purvapaksha_sources": [
+        "कुमारिल भट्ट",
+        "मीमांसा",
+        "महात्मा गांधी",
+        "Mackie",
+        "Kant",
+        "Aristotle"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-013",
+      "question": "क्या ईश्वर का अस्तित्व तर्क के आधार पर सिद्ध किया जा सकता है?",
+      "language": "hindi",
+      "domain": "god_existence",
+      "expected_purvapaksha_sources": [
+        "उदयन",
+        "शंकर",
+        "चार्वाक",
+        "नागार्जुन",
+        "रामानुज",
+        "Hume"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-014",
+      "question": "क्या भाषा विचार को आकार देती है या विचार भाषा से पहले होता है?",
+      "language": "hindi",
+      "domain": "language_thought",
+      "expected_purvapaksha_sources": [
+        "भर्तृहरि",
+        "दिग्नाग",
+        "पाणिनि",
+        "Whorf",
+        "Chomsky",
+        "Wittgenstein"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-015",
+      "question": "क्या काल (समय) एक स्वतंत्र तत्त्व है या केवल परिवर्तन की अनुभूति है?",
+      "language": "hindi",
+      "domain": "time_causation",
+      "expected_purvapaksha_sources": [
+        "वैशेषिक",
+        "न्याय",
+        "बौद्ध",
+        "नागार्जुन",
+        "Kant",
+        "McTaggart"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-016",
+      "question": "क्या मनुष्य में स्वतंत्र इच्छाशक्ति है, या सभी क्रियाएँ कारण-कार्य-श्रृंखला से बद्ध हैं?",
+      "language": "hindi",
+      "domain": "free_will",
+      "expected_purvapaksha_sources": [
+        "सांख्य",
+        "धर्मकीर्ति",
+        "Spinoza",
+        "Frankfurt",
+        "Kant",
+        "Hume"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-017",
+      "question": "क्या राजनीतिक सत्ता का नैतिक आधार सामाजिक अनुबंध है या प्राकृतिक व्यवस्था?",
+      "language": "hindi",
+      "domain": "political_philosophy",
+      "expected_purvapaksha_sources": [
+        "कौटिल्य",
+        "Rawls",
+        "Locke",
+        "Rousseau",
+        "Aristotle",
+        "Manusmriti"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-018",
+      "question": "क्या तर्कशास्त्र के नियम मानव मन की संरचना से स्वतंत्र हैं?",
+      "language": "hindi",
+      "domain": "logic_mathematical_truth",
+      "expected_purvapaksha_sources": [
+        "न्याय",
+        "गंगेश",
+        "Frege",
+        "Kant",
+        "Wittgenstein",
+        "Brouwer"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-019",
+      "question": "क्या सौंदर्यबोध वस्तुनिष्ठ है, या यह पूर्णतः दर्शक की दृष्टि पर निर्भर है?",
+      "language": "hindi",
+      "domain": "aesthetics_art",
+      "expected_purvapaksha_sources": [
+        "भरत",
+        "अभिनवगुप्त",
+        "Hume",
+        "Kant",
+        "Dickie",
+        "Beardsley"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-020",
+      "question": "क्या ज्ञान संशयवाद के सामने संभव है, या हर विश्वास अनिश्चित है?",
+      "language": "hindi",
+      "domain": "knowledge_skepticism",
+      "expected_purvapaksha_sources": [
+        "जयराशि",
+        "चार्वाक",
+        "वात्स्यायन",
+        "Descartes",
+        "Hume",
+        "Wittgenstein"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-021",
+      "question": "ਕੀ ਚੇਤਨਾ ਦਿਮਾਗ਼ ਦੀਆਂ ਅਵਸਥਾਵਾਂ ਤੱਕ ਸੀਮਤ ਹੈ, ਜਾਂ ਇਸਦੀ ਕੋਈ ਸੁਤੰਤਰ ਹੋਂਦ ਹੈ?",
+      "language": "punjabi",
+      "domain": "consciousness_identity",
+      "expected_purvapaksha_sources": [
+        "ਸ਼ੰਕਰ",
+        "ਧਰਮਕੀਰਤੀ",
+        "Chalmers",
+        "Nagel",
+        "ਨਾਗਾਰਜੁਨ",
+        "ਚਾਰਵਾਕ"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-022",
+      "question": "ਕੀ ਰੱਬ ਦੀ ਹੋਂਦ ਤਰਕ ਦੁਆਰਾ ਸਿੱਧ ਕੀਤੀ ਜਾ ਸਕਦੀ ਹੈ?",
+      "language": "punjabi",
+      "domain": "god_existence",
+      "expected_purvapaksha_sources": [
+        "ਉਦਯਨ",
+        "ਸ਼ੰਕਰ",
+        "ਚਾਰਵਾਕ",
+        "Anselm",
+        "Hume",
+        "Kant"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-023",
+      "question": "ਕੀ ਨੈਤਿਕ ਕਦਰਾਂ-ਕੀਮਤਾਂ ਵਸਤੂਨਿਸ਼ਠ ਹਨ ਜਾਂ ਇਹ ਸਿਰਫ਼ ਸਮਾਜਕ ਸਹਿਮਤੀ ਉੱਤੇ ਅਧਾਰਿਤ ਹਨ?",
+      "language": "punjabi",
+      "domain": "ethics_moral_realism",
+      "expected_purvapaksha_sources": [
+        "ਕੁਮਾਰਿਲ ਭੱਟ",
+        "ਮੀਮਾਂਸਾ",
+        "Mackie",
+        "Kant",
+        "Aristotle",
+        "Moore"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-024",
+      "question": "ਕੀ ਮਨੁੱਖ ਵਿੱਚ ਸੁਤੰਤਰ ਇੱਛਾ ਹੈ, ਜਾਂ ਸਾਰੀਆਂ ਕਿਰਿਆਵਾਂ ਕਾਰਨ-ਕਾਰਜ-ਲੜੀ ਨਾਲ ਬੱਝੀਆਂ ਹਨ?",
+      "language": "punjabi",
+      "domain": "free_will",
+      "expected_purvapaksha_sources": [
+        "ਸਾਂਖਯ",
+        "ਧਰਮਕੀਰਤੀ",
+        "Spinoza",
+        "Frankfurt",
+        "Kant",
+        "Hume"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-025",
+      "question": "ਕੀ ਭਾਸ਼ਾ ਵਿਚਾਰ ਨੂੰ ਆਕਾਰ ਦਿੰਦੀ ਹੈ, ਜਾਂ ਵਿਚਾਰ ਭਾਸ਼ਾ ਤੋਂ ਪਹਿਲਾਂ ਹੁੰਦਾ ਹੈ?",
+      "language": "punjabi",
+      "domain": "language_thought",
+      "expected_purvapaksha_sources": [
+        "ਭਰਤ੍ਰਹਰੀ",
+        "ਦਿਗਨਾਗ",
+        "Whorf",
+        "Chomsky",
+        "Wittgenstein",
+        "Sapir"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-026",
+      "question": "ਕੀ ਰਾਜਨੀਤਕ ਸੱਤਾ ਦਾ ਨੈਤਿਕ ਆਧਾਰ ਸਮਾਜਕ ਸਮਝੌਤਾ ਹੈ ਜਾਂ ਕੁਦਰਤੀ ਵਿਵਸਥਾ?",
+      "language": "punjabi",
+      "domain": "political_philosophy",
+      "expected_purvapaksha_sources": [
+        "ਕੌਟਿਲਿਯ",
+        "Rawls",
+        "Locke",
+        "Rousseau",
+        "Aristotle",
+        "Hobbes"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-027",
+      "question": "ਕੀ ਸਮਾਂ ਇੱਕ ਸੁਤੰਤਰ ਤੱਤ ਹੈ ਜਾਂ ਸਿਰਫ਼ ਪਰਿਵਰਤਨ ਦੀ ਅਨੁਭਵ-ਮਾਤਰ?",
+      "language": "punjabi",
+      "domain": "time_causation",
+      "expected_purvapaksha_sources": [
+        "ਵੈਸ਼ੇਸ਼ਿਕ",
+        "ਨਿਆਯ",
+        "ਬੋਧੀ",
+        "ਨਾਗਾਰਜੁਨ",
+        "Kant",
+        "McTaggart"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-028",
+      "question": "ਕੀ ਗਿਆਨ ਸੰਸ਼ਯਵਾਦ ਦੇ ਸਾਮ੍ਹਣੇ ਸੰਭਵ ਹੈ?",
+      "language": "punjabi",
+      "domain": "knowledge_skepticism",
+      "expected_purvapaksha_sources": [
+        "ਜਯਰਾਸ਼ਿ",
+        "ਚਾਰਵਾਕ",
+        "ਵਾਤਸ੍ਯਾਯਨ",
+        "Descartes",
+        "Hume",
+        "Wittgenstein"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-029",
+      "question": "ਕੀ ਸੁਹਜਬੋਧ ਵਸਤੂਨਿਸ਼ਠ ਹੈ, ਜਾਂ ਇਹ ਪੂਰੀ ਤਰ੍ਹਾਂ ਦਰਸ਼ਕ ਦੀ ਨਜ਼ਰ ਉੱਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ?",
+      "language": "punjabi",
+      "domain": "aesthetics_art",
+      "expected_purvapaksha_sources": [
+        "ਭਰਤ",
+        "ਅਭਿਨਵਗੁਪਤ",
+        "Hume",
+        "Kant",
+        "Dickie",
+        "Beardsley"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-030",
+      "question": "ਕੀ ਗਣਿਤ ਦੀਆਂ ਸੱਚਾਈਆਂ ਖੋਜੀਆਂ ਜਾਂਦੀਆਂ ਹਨ ਜਾਂ ਮਨੁੱਖੀ ਮਨ ਦੁਆਰਾ ਘੜੀਆਂ ਜਾਂਦੀਆਂ ਹਨ?",
+      "language": "punjabi",
+      "domain": "logic_mathematical_truth",
+      "expected_purvapaksha_sources": [
+        "ਨਿਆਯ",
+        "ਗੰਗੇਸ਼",
+        "Frege",
+        "Brouwer",
+        "Godel",
+        "Wittgenstein"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-031",
+      "question": "உணர்வு (consciousness) மூளை நிலைகளுக்கு மட்டுமே சுருக்கப்படுமா, அல்லது அதற்கு ஒரு சுயேச்சையான இருப்பு உண்டா?",
+      "language": "tamil",
+      "domain": "consciousness_identity",
+      "expected_purvapaksha_sources": [
+        "சங்கரர்",
+        "தர்மகீர்த்தி",
+        "Chalmers",
+        "Nagel",
+        "நாகார்ஜுனர்",
+        "சார்வாகர்"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-032",
+      "question": "கடவுளின் இருப்பை தர்க்கத்தின் மூலம் நிரூபிக்க முடியுமா?",
+      "language": "tamil",
+      "domain": "god_existence",
+      "expected_purvapaksha_sources": [
+        "உதயனர்",
+        "சங்கரர்",
+        "ராமானுஜர்",
+        "சார்வாகர்",
+        "Anselm",
+        "Hume"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-033",
+      "question": "தார்மீக மதிப்புகள் புறவயமானவையா (objective), அல்லது அவை சமூக ஒருமித்த கருத்தின் மீது மட்டுமே நிற்கின்றனவா?",
+      "language": "tamil",
+      "domain": "ethics_moral_realism",
+      "expected_purvapaksha_sources": [
+        "குமாரிலர்",
+        "மீமாம்சை",
+        "Mackie",
+        "Kant",
+        "Aristotle",
+        "Moore"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-034",
+      "question": "மனிதனுக்கு சுதந்திர விருப்பம் (free will) உண்டா, அல்லது அனைத்து செயல்களும் காரண-காரிய தொடரில் கட்டுப்பட்டிருக்கின்றனவா?",
+      "language": "tamil",
+      "domain": "free_will",
+      "expected_purvapaksha_sources": [
+        "சாங்கியம்",
+        "தர்மகீர்த்தி",
+        "Spinoza",
+        "Frankfurt",
+        "Kant",
+        "Hume"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-035",
+      "question": "மொழி சிந்தனையை வடிவமைக்கிறதா, அல்லது சிந்தனை மொழிக்கு முன்னே நிலவுகிறதா?",
+      "language": "tamil",
+      "domain": "language_thought",
+      "expected_purvapaksha_sources": [
+        "பர்த்ருஹரி",
+        "திக்நாகர்",
+        "Whorf",
+        "Chomsky",
+        "Wittgenstein",
+        "தொல்காப்பியர்"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-036",
+      "question": "காலம் (time) ஒரு சுயேச்சையான தனிமம் (independent element) ஆகுமா, அல்லது மாற்றத்தின் அனுபவம் மட்டுமேயா?",
+      "language": "tamil",
+      "domain": "time_causation",
+      "expected_purvapaksha_sources": [
+        "வைசேஷிகம்",
+        "நியாயம்",
+        "நாகார்ஜுனர்",
+        "Kant",
+        "McTaggart",
+        "Augustine"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-037",
+      "question": "அரசியல் அதிகாரத்தின் தார்மீக அடிப்படை சமூக ஒப்பந்தமா, இல்லை இயற்கை ஒழுங்கா?",
+      "language": "tamil",
+      "domain": "political_philosophy",
+      "expected_purvapaksha_sources": [
+        "கவுடில்யர்",
+        "திருவள்ளுவர்",
+        "Rawls",
+        "Locke",
+        "Rousseau",
+        "Aristotle"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-038",
+      "question": "கலை அழகு புறவயமானதா, அல்லது அது முற்றிலும் பார்வையாளரின் கண்ணோட்டத்தில் மட்டுமே இருக்கிறதா?",
+      "language": "tamil",
+      "domain": "aesthetics_art",
+      "expected_purvapaksha_sources": [
+        "பரதன்",
+        "அபிநவகுப்தர்",
+        "Hume",
+        "Kant",
+        "Dickie",
+        "திருவள்ளுவர்"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-039",
+      "question": "அறிவு (knowledge) சந்தேகவாதத்தை எதிர்கொள்ளும்போது சாத்தியமா?",
+      "language": "tamil",
+      "domain": "knowledge_skepticism",
+      "expected_purvapaksha_sources": [
+        "ஜயராஷி",
+        "சார்வாகர்",
+        "வாத்ஸ்யாயனர்",
+        "Descartes",
+        "Hume",
+        "Wittgenstein"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-040",
+      "question": "கணிதத் உண்மைகள் கண்டுபிடிக்கப்படுகின்றனவா, அல்லது மனித மனதால் உருவாக்கப்படுகின்றனவா?",
+      "language": "tamil",
+      "domain": "logic_mathematical_truth",
+      "expected_purvapaksha_sources": [
+        "நியாயம்",
+        "கங்கேசர்",
+        "Frege",
+        "Brouwer",
+        "Godel",
+        "Wittgenstein"
+      ],
+      "difficulty": "standard"
+    },
+    {
+      "id": "NB-041",
+      "question": "If neuroscience fully maps every neural correlate of conscious experience, does the 'hard problem' of consciousness dissolve or remain?",
+      "language": "english",
+      "domain": "consciousness_identity",
+      "expected_purvapaksha_sources": [
+        "Chalmers",
+        "Dennett",
+        "Dharmakirti",
+        "Shankara",
+        "Nagel",
+        "Crick"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "NB-042",
+      "question": "Can evolutionary biology explain the origin of moral intuitions, and if so, does that explanation undermine moral realism?",
+      "language": "english",
+      "domain": "ethics_moral_realism",
+      "expected_purvapaksha_sources": [
+        "Street",
+        "Ruse",
+        "Kumarila",
+        "Mimamsa",
+        "Moore",
+        "Darwin"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "NB-043",
+      "question": "Does Gödel's incompleteness theorem refute Hilbert's formalist program, and what are the implications for the nature of mathematical knowledge?",
+      "language": "english",
+      "domain": "logic_mathematical_truth",
+      "expected_purvapaksha_sources": [
+        "Godel",
+        "Hilbert",
+        "Wittgenstein",
+        "Frege",
+        "Gangesa",
+        "Penrose"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "NB-044",
+      "question": "Does quantum indeterminacy provide genuine metaphysical space for libertarian free will, or merely replace determinism with randomness?",
+      "language": "english",
+      "domain": "free_will",
+      "expected_purvapaksha_sources": [
+        "Kane",
+        "Samkhya",
+        "Dharmakirti",
+        "Spinoza",
+        "Frankfurt",
+        "Heisenberg"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "NB-045",
+      "question": "Is the Sapir-Whorf hypothesis of linguistic relativity supported by cognitive science, and what does this imply for the universality of reason?",
+      "language": "english",
+      "domain": "language_thought",
+      "expected_purvapaksha_sources": [
+        "Whorf",
+        "Chomsky",
+        "Bhartrhari",
+        "Dignaga",
+        "Boroditsky",
+        "Pinker"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "NB-046",
+      "question": "Does the multiverse hypothesis resolve the fine-tuning argument for God's existence, or does it merely push the explanatory regress back one level?",
+      "language": "english",
+      "domain": "god_existence",
+      "expected_purvapaksha_sources": [
+        "Udayana",
+        "Anselm",
+        "Swinburne",
+        "Kant",
+        "Hume",
+        "Nagarjuna"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "NB-047",
+      "question": "Does Rawls's veil of ignorance procedure succeed in deriving genuinely impartial principles of justice, or does it smuggle in liberal assumptions?",
+      "language": "english",
+      "domain": "political_philosophy",
+      "expected_purvapaksha_sources": [
+        "Rawls",
+        "Sandel",
+        "Nozick",
+        "Kautilya",
+        "Aristotle",
+        "Sen"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "NB-048",
+      "question": "Is the experience of beauty in art a form of cognitive perception, affective response, or a distinct irreducible faculty?",
+      "language": "english",
+      "domain": "aesthetics_art",
+      "expected_purvapaksha_sources": [
+        "Kant",
+        "Abhinavagupta",
+        "Bharata",
+        "Hume",
+        "Beardsley",
+        "Dickie"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "NB-049",
+      "question": "Does the causal closure of the physical world rule out genuine top-down causation from mind to body?",
+      "language": "english",
+      "domain": "time_causation",
+      "expected_purvapaksha_sources": [
+        "Jaegwon Kim",
+        "Descartes",
+        "Dharmakirti",
+        "Samkhya",
+        "Spinoza",
+        "Chalmers"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "NB-050",
+      "question": "In the Nyaya pramana framework, is anumana (inference) epistemically prior to pratyaksa (perception), or does perception always ground valid inference?",
+      "language": "english",
+      "domain": "nyaya_epistemic",
+      "expected_purvapaksha_sources": [
+        "Gautama",
+        "Vatsyayana",
+        "Dignaga",
+        "Dharmakirti",
+        "Gangesa",
+        "Udayana"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "NB-051",
+      "question": "Does the Nyaya concept of vyapti (universal concomitance) succeed as a logical foundation for inductive inference, given Humean skepticism about induction?",
+      "language": "english",
+      "domain": "nyaya_epistemic",
+      "expected_purvapaksha_sources": [
+        "Gangesa",
+        "Udayana",
+        "Vatsyayana",
+        "Hume",
+        "Dignaga",
+        "Dharmakirti"
+      ],
+      "difficulty": "hard"
+    },
+    {
+      "id": "NB-052",
+      "question": "Is the Nyaya doctrine of padarthas (categories of existence) a viable ontological framework compared to Aristotle's categories or Kant's pure concepts of the understanding?",
+      "language": "english",
+      "domain": "nyaya_epistemic",
+      "expected_purvapaksha_sources": [
+        "Gautama",
+        "Vatsyayana",
+        "Gangesa",
+        "Aristotle",
+        "Kant",
+        "Vaisheshika"
+      ],
+      "difficulty": "hard"
+    }
+  ]
+}

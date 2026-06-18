@@ -1,0 +1,10 @@
+# NyayaBench runtime dependencies.
+#
+# The scorer (evaluator.py) and batch scorer (score_baselines.py) rely only on
+# the Python standard library (json, re, unicodedata, urllib, ...), so they have
+# no third-party requirements.
+#
+# The following are needed only to *generate* model responses and run the tests:
+
+requests>=2.31,<3        # run_baselines.py — HTTP calls to Ollama / OpenRouter
+pytest>=8.0,<9           # tests/test_scorer_golden.py — scorer regression suite

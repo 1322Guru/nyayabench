@@ -1,0 +1,19 @@
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+
+# --- Local run artifacts / scratch (not part of the published benchmark) ---
+results/baseline_run_*
+results/scored_2026*
+results/comparison_*.csv
+results/d2_diagnosis_*
+results/v10_*
+
+# --- Private / internal material (kept outside the repo) ---
+_private_nyaya/
+*PATENT*
+scoring_methodology.md

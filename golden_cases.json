@@ -1,0 +1,413 @@
+{
+  "meta": {
+    "name": "NyayaBench scorer golden-response regression suite",
+    "scorer": "nyaya_bench/evaluator.py::score_response",
+    "pass_rule": "total >= 6",
+    "note": "Expected scores are HUMAN-VERIFIED ground truth (Gursimran), hand-traced from the rubric, NOT scorer-generated."
+  },
+  "cases": [
+    {
+      "id": "GA-01",
+      "category": "A-confidence",
+      "targets_bug": [
+        "#1 CONFIDENCE_PATTERN NONE"
+      ],
+      "language": "english",
+      "script": "latin",
+      "domain": "god_existence",
+      "difficulty": "hard",
+      "question": "Does a necessary being exist?",
+      "model_answer": "Pratijna (Thesis): Whether a necessary being exists cannot be settled from the armchair.\nHetu (Reason): The cosmological premises rely on contested assumptions about causation.\nUdaharana (Example): For instance, the kalam argument presupposes a finite past.\nUpanaya (Application): Applying this, neither premise is demonstrably established.\nNigamana (Conclusion): Therefore the existence question remains open.\nPurvapaksha (Objection): Anselm argues that existence follows necessarily from the concept of the greatest conceivable being.\nSiddhanta (Response): However, this objection conflates conceptual and real predicates, as Kant contended in his critique.\n[CONFIDENCE: NONE] I have insufficient grounding to adjudicate this question.",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 2,
+        "total": 9,
+        "pass": true
+      },
+      "key_assertion": "D3.level_detected == 'NONE' AND D3 == 2 (NONE registers, not zero)"
+    },
+    {
+      "id": "GA-02",
+      "category": "A-confidence",
+      "targets_bug": [
+        "#1 CONFIDENCE_PATTERN NONE"
+      ],
+      "language": "hindi",
+      "script": "devanagari",
+      "domain": "free_will",
+      "difficulty": "standard",
+      "question": "क्या मानव की इच्छा स्वतंत्र है?",
+      "model_answer": "प्रतिज्ञा: क्या मानव की इच्छा स्वतंत्र है, यह केवल आत्मनिरीक्षण से तय नहीं हो सकता।\nहेतु: क्योंकि कारण-शृंखला और स्वतंत्रता दोनों के प्रमाण विवादित हैं।\nउदाहरण: जैसे लिबेट के प्रयोग निर्णय से पहले मस्तिष्क-संकेत दिखाते हैं।\nउपनय: इसे लागू करने पर कोई भी पक्ष निर्णायक रूप से सिद्ध नहीं होता।\nनिगमन: अतः यह प्रश्न खुला रहता है।\nपूर्वपक्ष: नागार्जुन तर्क देते हैं कि स्वभाव-शून्यता के कारण नियतिवाद का आधार ढह जाता है।\nसिद्धांत: तथापि यह आपत्ति कार्य-कारण के व्यावहारिक स्तर की उपेक्षा करती है।\n[CONFIDENCE: NONE] मेरे पास इस प्रश्न को सुलझाने के लिए पर्याप्त आधार नहीं है।",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 1,
+        "total": 8,
+        "pass": true
+      },
+      "key_assertion": "D3.level_detected == 'NONE' AND D3 == 2 in Devanagari"
+    },
+    {
+      "id": "GA-03",
+      "category": "A-confidence",
+      "targets_bug": [
+        "#1 CONFIDENCE_PATTERN NONE"
+      ],
+      "language": "punjabi",
+      "script": "gurmukhi",
+      "domain": "aesthetics_art",
+      "difficulty": "standard",
+      "question": "ਕੀ ਸੁੰਦਰਤਾ ਵਸਤੂ ਵਿੱਚ ਹੈ ਜਾਂ ਦੇਖਣ ਵਾਲੇ ਵਿੱਚ?",
+      "model_answer": "ਪ੍ਰਤਿਗਿਆ: ਕੀ ਸੁੰਦਰਤਾ ਵਸਤੂ ਵਿੱਚ ਹੈ ਜਾਂ ਦੇਖਣ ਵਾਲੇ ਵਿੱਚ, ਇਹ ਕੇਵਲ ਰੁਚੀ ਤੋਂ ਤੈਅ ਨਹੀਂ ਹੁੰਦਾ।\nਕਾਰਨ: ਕਿਉਂਕਿ ਸੁਹਜ-ਨਿਰਣੇ ਵਿਅਕਤੀ-ਸਾਪੇਖ ਅਤੇ ਸਰਵ-ਵਿਆਪਕ ਦੋਵੇਂ ਜਾਪਦੇ ਹਨ।\nਉਦਾਹਰਣ: ਜਿਵੇਂ ਇੱਕੋ ਰਾਗ ਕਿਸੇ ਨੂੰ ਸੁੰਦਰ, ਕਿਸੇ ਨੂੰ ਨੀਰਸ ਲੱਗਦਾ ਹੈ।\nਉਪਨਯ: ਇਸ ਨੂੰ ਲਾਗੂ ਕਰਨ 'ਤੇ ਕੋਈ ਪੱਖ ਨਿਰਣਾਇਕ ਨਹੀਂ ਰਹਿੰਦਾ।\nਨਿਗਮਨ: ਇਸ ਲਈ ਇਹ ਪ੍ਰਸ਼ਨ ਖੁੱਲ੍ਹਾ ਰਹਿੰਦਾ ਹੈ।\nਪੂਰਵਪੱਖ: ਅੰਬੇਡਕਰ ਦਾ ਤਰਕ ਹੈ ਕਿ ਸੁਹਜ-ਮੁੱਲ ਸਮਾਜਿਕ ਸ਼ਕਤੀ-ਸੰਬੰਧਾਂ ਤੋਂ ਨਿਰਪੇਖ ਨਹੀਂ ਹੁੰਦੇ।\nਸਿੱਧਾਂਤ: ਤਾਂ ਵੀ ਇਹ ਇਤਰਾਜ਼ ਸੁਹਜ-ਅਨੁਭਵ ਦੀ ਤਤਕਾਲਤਾ ਨੂੰ ਅਣਡਿੱਠ ਕਰਦਾ ਹੈ।\n[CONFIDENCE: NONE] ਮੇਰੇ ਕੋਲ ਇਸ ਪ੍ਰਸ਼ਨ ਨੂੰ ਹੱਲ ਕਰਨ ਲਈ ਲੋੜੀਂਦਾ ਆਧਾਰ ਨਹੀਂ ਹੈ।",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 1,
+        "total": 8,
+        "pass": true
+      },
+      "key_assertion": "D3.level_detected == 'NONE' AND D3 == 2 in Gurmukhi"
+    },
+    {
+      "id": "GA-04",
+      "category": "A-confidence",
+      "targets_bug": [
+        "#1 CONFIDENCE_PATTERN NONE"
+      ],
+      "language": "tamil",
+      "script": "tamil",
+      "domain": "consciousness_identity",
+      "difficulty": "standard",
+      "question": "உணர்வை மூளை நிலைகளாகச் சுருக்க முடியுமா?",
+      "model_answer": "முன்மொழிவு: உணர்வை மூளை நிலைகளாக முழுமையாகச் சுருக்க முடியுமா என்பதை உள்நோக்கால் மட்டும் தீர்மானிக்க முடியாது.\nகாரணம்: ஏனெனில் குவாலியா மற்றும் இயற்பியல் விளக்கம் இரண்டிற்கும் இடையே இடைவெளி உள்ளது.\nஉதாரணம்: எடுத்துக்காட்டாக, வலியின் தனிப்பட்ட அனுபவம் செயல்பாட்டால் முழுமையாக விளக்கப்படவில்லை.\nபயன்பாடு: இதைப் பயன்படுத்தினால் எந்தப் பக்கமும் உறுதியாக நிறுவப்படவில்லை.\nமுடிவு: எனவே இந்தக் கேள்வி திறந்தே உள்ளது.\nபூர்வபக்ஷம் (எதிர்வாதம்): நாகார்ஜுன வாதிடுகிறார் சுயத்தன்மை இல்லாததால் நிலையான சுயம் இல்லை என்று.\nசித்தாந்தம்: ஆயினும் இந்த எதிர்வாதம் அனுபவத்தின் நேரடித்தன்மையைப் புறக்கணிக்கிறது.\n[CONFIDENCE: NONE] இந்தக் கேள்வியைத் தீர்க்க எனக்குப் போதிய ஆதாரம் இல்லை.",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 1,
+        "total": 8,
+        "pass": true
+      },
+      "key_assertion": "D3.level_detected == 'NONE' AND D3 == 2 in Tamil"
+    },
+    {
+      "id": "GA-05",
+      "category": "A-confidence",
+      "targets_bug": [
+        "#1 CONFIDENCE_PATTERN"
+      ],
+      "language": "english",
+      "script": "latin",
+      "domain": "logic_mathematical_truth",
+      "difficulty": "standard",
+      "question": "Is every consistent arithmetic system complete?",
+      "model_answer": "Pratijna (Thesis): Godel's first incompleteness theorem holds for any consistent recursively axiomatized system containing arithmetic.\nHetu (Reason): Because such a system can encode a self-referential statement asserting its own unprovability.\nUdaharana (Example): For example, the Godel sentence G is true but unprovable in the system.\nUpanaya (Application): Applying this, no such system proves all arithmetical truths.\nNigamana (Conclusion): Therefore completeness and consistency cannot both hold here.\nPurvapaksha (Objection): Hilbert maintained that mathematics could be fully formalized and proved complete.\nSiddhanta (Response): However, this objection is refuted by the diagonal construction, as Godel demonstrated; the formalist programme fails on its own terms.\n[CONFIDENCE: HIGH] This is a well-established result.",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 2,
+        "total": 9,
+        "pass": true
+      },
+      "key_assertion": "D3.level_detected == 'HIGH' AND D3 == 2 (HIGH calibrated for evidence domain)"
+    },
+    {
+      "id": "GA-06",
+      "category": "A-confidence",
+      "targets_bug": [
+        "#1 CONFIDENCE_PATTERN"
+      ],
+      "language": "tamil",
+      "script": "tamil",
+      "domain": "free_will",
+      "difficulty": "standard",
+      "question": "மனித விருப்பம் சுதந்திரமானதா?",
+      "model_answer": "முன்மொழிவு: மனித விருப்பம் சுதந்திரமா என்பதை உள்நோக்கால் மட்டும் தீர்மானிக்க முடியாது.\nகாரணம்: ஏனெனில் காரண-சங்கிலியும் சுதந்திரமும் இரண்டுக்கும் சான்று சர்ச்சைக்குரியது.\nஉதாரணம்: எடுத்துக்காட்டாக, லிபெட் சோதனைகள் முடிவுக்கு முன் மூளை சமிக்ஞையைக் காட்டுகின்றன.\nபயன்பாடு: இதைப் பயன்படுத்தினால் எந்தப் பக்கமும் உறுதியாக நிறுவப்படவில்லை.\nமுடிவு: எனவே இந்தக் கேள்வி திறந்தே உள்ளது.\nபூர்வபக்ஷம் (எதிர்வாதம்): நாகார்ஜுன வாதிடுகிறார் காரண-சங்கிலி சுயத்தை மறுக்கிறது என்று.\nசித்தாந்தம்: ஆயினும் இந்த எதிர்வாதம் அனுபவ சுதந்திரத்தைப் புறக்கணிக்கிறது.\n[CONFIDENCE: LOW] உறுதியான முடிவுக்கு வர போதிய ஆதாரம் இல்லை.",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 1,
+        "total": 8,
+        "pass": true
+      },
+      "key_assertion": "D3.level_detected == 'LOW' AND D3 == 2 (LOW calibrated for speculative domain) in Tamil"
+    },
+    {
+      "id": "GA-07",
+      "category": "A-confidence",
+      "targets_bug": [
+        "#5 CONFIDENCE_PATTERN natural-language hedging is English-only"
+      ],
+      "language": "tamil",
+      "script": "tamil",
+      "domain": "free_will",
+      "difficulty": "standard",
+      "question": "மனித விருப்பம் சுதந்திரமானதா?",
+      "model_answer": "முன்மொழிவு: மனித விருப்பம் சுதந்திரமா என்பதை உறுதியாகத் தீர்மானிக்க முடியாது.\nகாரணம்: ஏனெனில் காரண-சங்கிலிக்கும் சுதந்திரத்திற்கும் இடையேயான சான்று இன்னும் தெளிவில்லை.\nஉதாரணம்: எடுத்துக்காட்டாக, லிபெட் சோதனைகள் ஐயத்திற்கு இடம் தருகின்றன.\nபயன்பாடு: இதைப் பயன்படுத்தினால் எந்தப் பக்கமும் உறுதியாக நிறுவப்படவில்லை.\nமுடிவு: எனவே இந்தக் கேள்வி திறந்தே உள்ளது.\nபூர்வபக்ஷம் (எதிர்வாதம்): நாகார்ஜுன வாதிடுகிறார் காரண-சங்கிலி சுயத்தை மறுக்கிறது என்று.\nசித்தாந்தம்: ஆயினும் இந்த எதிர்வாதம் அனுபவ சுதந்திரத்தைப் புறக்கணிக்கிறது.\nஇதை நான் உறுதியாகச் சொல்ல முடியாது; ஒருவேளை என் முடிவு தவறாக இருக்கலாம், சான்று போதவில்லை.",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 1,
+        "D4": 1,
+        "D5": 1,
+        "total": 7,
+        "pass": true
+      },
+      "key_assertion": "D3 == 1 — natural-language LOW hedging in Tamil with NO [CONFIDENCE:] bracket must register as a signal and earn partial credit, identical to an English natural hedge. D3 must NOT be 0."
+    },
+    {
+      "id": "GB-01",
+      "category": "B-citation",
+      "targets_bug": [
+        "#2 philosopher regex parity (Latin baseline)"
+      ],
+      "language": "english",
+      "script": "latin",
+      "domain": "nyaya_epistemic",
+      "difficulty": "standard",
+      "question": "Is inference a valid means of knowledge?",
+      "model_answer": "Pratijna (Thesis): Inference (anumana) is a valid means of knowledge.\nHetu (Reason): Because pervasion (vyapti) between the mark and the inferred property is established by repeated observation.\nUdaharana (Example): For example, where there is smoke there is fire, as in a kitchen.\nUpanaya (Application): This hill has smoke, which is pervaded by fire.\nNigamana (Conclusion): Therefore this hill has fire.\nPurvapaksha (Objection): Nagarjuna argues that since all things are empty of intrinsic nature, inference has no real basis.\nSiddhanta (Response): However, this objection is answered by Dignaga, whose apoha theory grounds valid inference without positing real universals.\n[CONFIDENCE: HIGH] This is well grounded in Nyaya and Buddhist pramana theory.",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 2,
+        "total": 9,
+        "pass": true
+      },
+      "key_assertion": "PARITY TWIN BASELINE. D2 == 3 (Nagarjuna in PP) AND D5 == 2 (Dignaga named in siddhanta). GB-02/03/04 must match BOTH cells exactly.",
+      "expected_purvapaksha_sources": [
+        "Nagarjuna"
+      ]
+    },
+    {
+      "id": "GB-02",
+      "category": "B-citation",
+      "targets_bug": [
+        "#2 philosopher regex parity (Devanagari)"
+      ],
+      "language": "hindi",
+      "script": "devanagari",
+      "domain": "nyaya_epistemic",
+      "difficulty": "standard",
+      "question": "क्या अनुमान एक वैध प्रमाण है?",
+      "model_answer": "प्रतिज्ञा: अनुमान एक वैध प्रमाण है।\nहेतु: क्योंकि साध्य और हेतु के बीच व्याप्ति बार-बार के निरीक्षण से सिद्ध होती है।\nउदाहरण: जैसे जहाँ धुआँ है वहाँ अग्नि है, रसोई की भाँति।\nउपनय: इस पर्वत पर धुआँ है, जो अग्नि से व्याप्त है।\nनिगमन: अतः इस पर्वत पर अग्नि है।\nपूर्वपक्ष: नागार्जुन तर्क देते हैं कि सब कुछ स्वभाव-शून्य होने के कारण अनुमान का कोई वास्तविक आधार नहीं है।\nसिद्धांत: तथापि यह आपत्ति दिग्नाग द्वारा उत्तरित है, जिनका अपोह-सिद्धांत वास्तविक सामान्य के बिना वैध अनुमान की नींव देता है।\n[CONFIDENCE: HIGH] यह न्याय और बौद्ध प्रमाण-सिद्धांत में सुप्रतिष्ठित है।",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 2,
+        "total": 9,
+        "pass": true
+      },
+      "key_assertion": "PARITY TWIN. D2 == 3 ('नागार्जुन ... तर्क देते हैं' == GB-01 'Nagarjuna argues') AND D5 == 2 ('दिग्नाग' named in siddhanta == GB-01 'Dignaga'). Both cells must equal GB-01.",
+      "expected_purvapaksha_sources": [
+        "Nagarjuna"
+      ]
+    },
+    {
+      "id": "GB-03",
+      "category": "B-citation",
+      "targets_bug": [
+        "#2 philosopher regex parity (Gurmukhi)"
+      ],
+      "language": "punjabi",
+      "script": "gurmukhi",
+      "domain": "nyaya_epistemic",
+      "difficulty": "standard",
+      "question": "ਕੀ ਅਨੁਮਾਨ ਇੱਕ ਜਾਇਜ਼ ਪ੍ਰਮਾਣ ਹੈ?",
+      "model_answer": "ਪ੍ਰਤਿਗਿਆ: ਅਨੁਮਾਨ ਇੱਕ ਜਾਇਜ਼ ਪ੍ਰਮਾਣ ਹੈ।\nਕਾਰਨ: ਕਿਉਂਕਿ ਸਾਧ੍ਯ ਅਤੇ ਹੇਤੁ ਵਿਚਕਾਰ ਵਿਆਪਤੀ ਵਾਰ-ਵਾਰ ਦੇ ਨਿਰੀਖਣ ਤੋਂ ਸਿੱਧ ਹੁੰਦੀ ਹੈ।\nਉਦਾਹਰਣ: ਜਿਵੇਂ ਜਿੱਥੇ ਧੂੰਆਂ ਹੈ ਉੱਥੇ ਅੱਗ ਹੈ, ਰਸੋਈ ਵਾਂਗ।\nਉਪਨਯ: ਇਸ ਪਹਾੜ 'ਤੇ ਧੂੰਆਂ ਹੈ, ਜੋ ਅੱਗ ਨਾਲ ਵਿਆਪਤ ਹੈ।\nਨਿਗਮਨ: ਇਸ ਲਈ ਇਸ ਪਹਾੜ 'ਤੇ ਅੱਗ ਹੈ।\nਪੂਰਵਪੱਖ: ਨਾਗਾਰਜੁਨ ਦਾ ਤਰਕ ਹੈ ਕਿ ਸਭ ਕੁਝ ਸੁਭਾਅ-ਸ਼ੂਨ੍ਯ ਹੋਣ ਕਾਰਨ ਅਨੁਮਾਨ ਦਾ ਕੋਈ ਵਾਸਤਵਿਕ ਆਧਾਰ ਨਹੀਂ ਹੈ।\nਸਿੱਧਾਂਤ: ਤਾਂ ਵੀ ਇਹ ਇਤਰਾਜ਼ ਦਿਗਨਾਗ ਦੁਆਰਾ ਉੱਤਰਿਤ ਹੈ, ਜਿਨ੍ਹਾਂ ਦਾ ਅਪੋਹ-ਸਿਧਾਂਤ ਵਾਸਤਵਿਕ ਸਾਮਾਨ੍ਯ ਤੋਂ ਬਿਨਾਂ ਵੈਧ ਅਨੁਮਾਨ ਦੀ ਨੀਂਹ ਦਿੰਦਾ ਹੈ।\n[CONFIDENCE: HIGH] ਇਹ ਨਿਆਯ ਅਤੇ ਬੌਧ ਪ੍ਰਮਾਣ-ਸਿਧਾਂਤ ਵਿੱਚ ਸਥਾਪਿਤ ਹੈ।",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 2,
+        "total": 9,
+        "pass": true
+      },
+      "key_assertion": "PARITY TWIN. D2 == 3 ('ਨਾਗਾਰਜੁਨ ... ਦਾ ਤਰਕ ਹੈ') AND D5 == 2 ('ਦਿਗਨਾਗ' named in siddhanta). Both cells must equal GB-01.",
+      "expected_purvapaksha_sources": [
+        "Nagarjuna"
+      ]
+    },
+    {
+      "id": "GB-04",
+      "category": "B-citation",
+      "targets_bug": [
+        "#2 philosopher regex parity (Tamil)"
+      ],
+      "language": "tamil",
+      "script": "tamil",
+      "domain": "nyaya_epistemic",
+      "difficulty": "standard",
+      "question": "அனுமானம் ஒரு செல்லுபடியான அறிவுசாதனமா?",
+      "model_answer": "முன்மொழிவு: அனுமானம் ஒரு செல்லுபடியான அறிவுசாதனம்.\nகாரணம்: ஏனெனில் சாத்யத்திற்கும் ஹேதுவிற்கும் இடையேயான வியாப்தி மீண்டும் மீண்டும் கவனிப்பால் நிறுவப்படுகிறது.\nஉதாரணம்: எடுத்துக்காட்டாக, எங்கே புகை உள்ளதோ அங்கே நெருப்பு உள்ளது, அடுப்பில் போல.\nபயன்பாடு: இந்த மலையில் புகை உள்ளது, அது நெருப்பால் வியாபிக்கப்படுகிறது.\nமுடிவு: எனவே இந்த மலையில் நெருப்பு உள்ளது.\nபூர்வபக்ஷம் (எதிர்வாதம்): நாகார்ஜுன வாதிடுகிறார் அனைத்தும் இயல்பற்றவை என்பதால் அனுமானத்திற்கு உண்மையான அடிப்படை இல்லை என்று.\nசித்தாந்தம்: ஆயினும் இந்த எதிர்வாதம் தவறானது; திக்நாகர் இதற்குப் பதிலளிக்கிறார், அவரது அபோஹக் கோட்பாடு உண்மையான பொதுமை இல்லாமல் செல்லுபடியான அனுமானத்திற்கு அடித்தளம் தருகிறது.\n[CONFIDENCE: HIGH] இது நியாய மற்றும் பௌத்த அளவையியலில் நன்கு நிறுவப்பட்டது.",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 2,
+        "total": 9,
+        "pass": true
+      },
+      "key_assertion": "PARITY TWIN. D2 == 3 ('நாகார்ஜுன வாதிடுகிறார்') AND D5 == 2 (nominative 'திக்நாகர்' named in siddhanta). Both cells must equal GB-01. A correct Tamil citation must NOT score 0.",
+      "expected_purvapaksha_sources": [
+        "Nagarjuna"
+      ]
+    },
+    {
+      "id": "GC-01",
+      "category": "C-substance-gate",
+      "targets_bug": [
+        "#3 D2 substance gate / terse-Indic concern"
+      ],
+      "language": "tamil",
+      "script": "tamil",
+      "domain": "nyaya_epistemic",
+      "difficulty": "standard",
+      "question": "அனுமானம் செல்லுபடியா?",
+      "model_answer": "முன்மொழிவு: அனுமானம் செல்லுபடியானது.\nகாரணம்: வியாப்தியால்.\nஉதாரணம்: புகை-நெருப்பு.\nபயன்பாடு: மலையில் புகை.\nமுடிவு: எனவே நெருப்பு.\nபூர்வபக்ஷம் (எதிர்வாதம்): திக்நாகர் வாதிடுகிறார் அபோஹம் மட்டுமே என்று.\nசித்தாந்தம்: ஆயினும் இந்த எதிர்வாதம் தவறானது.",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 0,
+        "D4": 1,
+        "D5": 1,
+        "total": 6,
+        "pass": true
+      },
+      "key_assertion": "D2 == 3 — terse Indic PP (named + Tamil objection verb, <25 words) is NOT punished by the word-count gate"
+    },
+    {
+      "id": "GC-02",
+      "category": "C-substance-gate",
+      "targets_bug": [
+        "#3 D2 substance gate / terse-Indic concern"
+      ],
+      "language": "hindi",
+      "script": "devanagari",
+      "domain": "nyaya_epistemic",
+      "difficulty": "standard",
+      "question": "क्या अनुमान वैध है?",
+      "model_answer": "प्रतिज्ञा: अनुमान वैध है।\nहेतु: व्याप्ति से।\nउदाहरण: धुआँ-अग्नि।\nउपनय: पर्वत पर धुआँ।\nनिगमन: अतः अग्नि।\nपूर्वपक्ष: दिग्नाग तर्क देते हैं कि केवल अपोह।\nसिद्धांत: तथापि यह आपत्ति गलत है।",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 0,
+        "D4": 1,
+        "D5": 1,
+        "total": 6,
+        "pass": true
+      },
+      "key_assertion": "D2 == 3 — terse Devanagari PP (named + verb, <25 words) NOT punished by word-count gate"
+    },
+    {
+      "id": "GC-03",
+      "category": "C-substance-gate",
+      "targets_bug": [
+        "#3 D2 substance gate (empty/evasive must fail)"
+      ],
+      "language": "english",
+      "script": "latin",
+      "domain": "nyaya_epistemic",
+      "difficulty": "standard",
+      "question": "Is inference valid?",
+      "model_answer": "Pratijna (Thesis): This is a hard question.\nHetu (Reason): It depends.\nUdaharana (Example): Many cases exist.\nUpanaya (Application): It applies broadly.\nNigamana (Conclusion): So it is unclear.\nPurvapaksha (Objection): There are other views on this matter.\nSiddhanta (Response): But I will not take a side.",
+      "expected": {
+        "D1": 1,
+        "D2": 0,
+        "D3": 0,
+        "D4": 1,
+        "D5": 0,
+        "total": 2,
+        "pass": false
+      },
+      "key_assertion": "D2 == 0 — genuinely empty/evasive PP (no name, no school, no generic-objection phrase) fails the gate"
+    },
+    {
+      "id": "GD-01",
+      "category": "D-anchor-pass",
+      "targets_bug": [
+        "full pass anchor"
+      ],
+      "language": "english",
+      "script": "latin",
+      "domain": "knowledge_skepticism",
+      "difficulty": "standard",
+      "question": "Is justified true belief sufficient for knowledge?",
+      "model_answer": "Pratijna (Thesis): Knowledge requires more than justified true belief.\nHetu (Reason): Because Gettier cases show justified true belief can fail to be knowledge.\nUdaharana (Example): For example, a stopped clock read at the right time yields true belief without knowledge.\nUpanaya (Application): Applying this, justification alone does not secure the truth-connection.\nNigamana (Conclusion): Therefore an anti-luck condition is needed.\nPurvapaksha (Objection): Descartes argues that only indubitable foundations can ground knowledge, so ordinary justification fails.\nSiddhanta (Response): However, this objection sets the bar too high; as Quine maintained, knowledge can be fallibilist yet genuine, refuting global skepticism.\n[CONFIDENCE: MEDIUM] This reflects mainstream epistemology.",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 2,
+        "total": 9,
+        "pass": true
+      },
+      "key_assertion": "total == 9, pass == true — clean full-pass anchor (correct 7-step structure, named PP, calibrated confidence)"
+    },
+    {
+      "id": "GD-02",
+      "category": "D-anchor-fail",
+      "targets_bug": [
+        "full fail anchor"
+      ],
+      "language": "english",
+      "script": "latin",
+      "domain": "consciousness_identity",
+      "difficulty": "hard",
+      "question": "Is consciousness reducible to brain states?",
+      "model_answer": "Consciousness is definitely just brain chemistry, full stop. The famous philosopher Zorgon the Unprovable proved this in his treatise. [CONFIDENCE: HIGH] I am completely certain.",
+      "expected": {
+        "D1": 0,
+        "D2": 0,
+        "D3": 1,
+        "D4": 1,
+        "D5": 0,
+        "total": 2,
+        "pass": false
+      },
+      "key_assertion": "pass == false; D3 == 1 with level_detected=='HIGH' and calibrated==false (overconfidence on speculative domain detected and penalized); D2 == 0 (hallucinated non-philosopher 'Zorgon' earns nothing); D1 == 0 (no structure)"
+    },
+    {
+      "id": "GD-03",
+      "category": "D-anchor-pass",
+      "targets_bug": [
+        "Indic full-pass anchor"
+      ],
+      "language": "tamil",
+      "script": "tamil",
+      "domain": "logic_mathematical_truth",
+      "difficulty": "standard",
+      "question": "கணித உண்மைகள் கண்டுபிடிக்கப்படுகின்றனவா அல்லது படைக்கப்படுகின்றனவா?",
+      "model_answer": "முன்மொழிவு: கணித உண்மைகள் கண்டுபிடிக்கப்படுகின்றனவே தவிர படைக்கப்படவில்லை.\nகாரணம்: ஏனெனில் அவை நிறுவல் சார்பற்ற முறையில் செல்லுபடியாகின்றன.\nஉதாரணம்: எடுத்துக்காட்டாக, பகா எண்கள் முடிவிலி என்பது நிறுவப்பட்டது.\nபயன்பாடு: இதைப் பயன்படுத்தினால் கணித உண்மை மனத்தைச் சாராதது.\nமுடிவு: எனவே கணிதம் கண்டுபிடிக்கப்படுகிறது.\nபூர்வபக்ஷம் (எதிர்வாதம்): நாகார்ஜுன வாதிடுகிறார் எல்லாம் வெறுமையே என்று.\nசித்தாந்தம்: ஆயினும் இந்த எதிர்வாதம் தவறானது; திக்நாகர் காட்டியபடி, கணித அனுமானம் மனத்தைச் சாராமல் செயல்படுகிறது.\n[CONFIDENCE: HIGH] இது கணித தர்க்கத்தில் நன்கு நிறுவப்பட்டது.",
+      "expected": {
+        "D1": 1,
+        "D2": 3,
+        "D3": 2,
+        "D4": 1,
+        "D5": 2,
+        "total": 9,
+        "pass": true
+      },
+      "key_assertion": "Indic full-pass 9/9 anchor; D2==3, D3==2(HIGH/evidence), D5==2 (nominative 'திக்நாகர்' named in siddhanta)"
+    }
+  ]
+}
