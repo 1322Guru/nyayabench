@@ -64,17 +64,19 @@ The scoring methodology, including the rubric for each dimension, is documented 
 
 The benchmark was run under deterministic (greedy) decoding for reproducibility. All models were evaluated under identical conditions, in a single batch, with the same scorer.
 
-| Model | Pass rate | Score (of 52) | Outcome |
-|-------|-----------|---------------|---------|
-| **IYRA v10** | **88.5%** | 46 / 52 | **Pass, only passing model** |
-| Qwen3-14B (base, untuned) | 59.6% | 31 / 52 | Did not pass |
-| Claude Sonnet 4.6 | 50.0% | 26 / 52 | Did not pass |
-| GPT-4o | 40.4% | 21 / 52 | Did not pass |
-| Gemini 2.5 Pro | 3.8% | 2 / 52 | Did not pass |
+| Model | Pass rate | Bench score | Outcome |
+|-------|-----------|-------------|---------|
+| **IYRA v10 (q6_K)** | **76.9%** | **80.3%** | **Pass** |
+| Claude Sonnet 4.6 | 71.2% | 70.5% | Pass |
+| Gemini 2.5 Pro | 71.2% | 70.7% | Pass |
+| Qwen3-14B (base, untuned) | 44.2% | 56.0% | Did not pass |
+| GPT-4o | 38.5% | 51.5% | Did not pass |
 
-*Conditions: greedy decoding (temperature 0.0); 52 questions; single batch; identical scorer (rule-based, deterministic). Pass threshold: total ≥ 6/9.*
+Per-language pass rate for IYRA v10: English 77%, Hindi 80%, Punjabi 70%, Tamil 80%.
 
-A note worth stating plainly: the leading commercial models are *more capable* than the model that tops this benchmark, in general terms. What NyayaBench measures is narrower and specific, the ability to produce **structured, auditable reasoning that holds up under a counter-argument and reports its own uncertainty.** That a 14-billion-parameter model trained for this structure outperforms much larger general models on this specific axis is the point: structured, auditable reasoning is a *trained capability*, not something that emerges automatically from scale or that a prompt can reliably enforce.
+*Conditions: greedy decoding (temperature 0.0); retrieval-free; an 8,192-token generation budget; 52 questions; single batch; identical rule-based, deterministic scorer. A model is marked Pass if it clears both thresholds: pass rate ≥ 70% and bench score ≥ 67% (per-question pass is total ≥ 6/9). An earlier run capped at 2,048 tokens truncated the more verbose models mid-answer (notably Claude and Gemini); the budget was raised to 8,192 tokens, at which no model is materially truncated.*
+
+A note worth stating plainly: the leading commercial models are *more capable* than the model that tops this benchmark, in general terms. What NyayaBench measures is narrower and specific, the ability to produce **structured, auditable reasoning that holds up under a counter-argument and reports its own uncertainty.** Under a fair token budget, three of the five models pass; IYRA leads, and the sharpest signal is that it improves about **33 points over its own untuned base model** (Qwen3-14B, 44.2% to 76.9%). That is the point: structured, auditable reasoning is a *trained capability*, not something that emerges automatically from scale or that a prompt can reliably enforce.
 
 IYRA (Indic Yukti Reasoning Architecture), the model that tops this benchmark, is a separate project; NyayaBench is the open evaluation. The benchmark is model-agnostic, any model can be run against it.
 
