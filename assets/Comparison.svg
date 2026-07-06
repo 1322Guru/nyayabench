@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <svg width="900" height="740" xmlns="http://www.w3.org/2000/svg">
   <style>
     /* Default: GitHub Light Mode Theme Adjustments */
-    .txt-heading { fill: #1f2328; font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; }
-    .txt-subheading { fill: #0969da; font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; }
-    .txt-main { fill: #24292e; font-family: Arial, sans-serif; font-size: 14px; }
-    .txt-legend { fill: #57606a; font-family: Arial, sans-serif; font-size: 12px; }
+    .txt-heading { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #1f2328; }
+    .txt-subheading { font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; fill: #0969da; }
+    .txt-main { font-family: Arial, sans-serif; font-size: 14px; fill: #24292e; }
+    .txt-legend { font-family: Arial, sans-serif; font-size: 12px; fill: #57606a; }
     
     /* Box & Pill Variants */
     .box-neutral { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.5; }
@@ -13,14 +14,14 @@
     
     /* Reference Image Colored Pills */
     .pill-limb { fill: #e6f4ea; stroke: #137333; stroke-width: 1.5; }
-    .txt-limb { fill: #137333; font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; }
+    .txt-limb { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: #137333; }
     
     .pill-dialectic { fill: #fce8e6; stroke: #c5221f; stroke-width: 1.5; }
-    .txt-dialectic { fill: #a51d24; font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; }
+    .txt-dialectic { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: #a51d24; }
     
     /* Evaluation Indicators */
-    .txt-success { fill: #1a7f37; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
-    .txt-danger { fill: #cf222e; font-family: Arial, sans-serif; font-size: 14px; }
+    .txt-success { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; fill: #1a7f37; }
+    .txt-danger { font-family: Arial, sans-serif; font-size: 14px; fill: #cf222e; }
     
     /* Connectors */
     .flow-line { stroke: #444c56; stroke-width: 1.5; }
@@ -79,10 +80,10 @@
 
   <rect x="100" y="315" width="260" height="195" class="box-container-left" rx="8"/>
   
-  <text x="230" y="350" text-anchor="middle" class="txt-success">✔ Correct?</text>
-  <text x="230" y="390" text-anchor="middle" class="txt-danger">✘ Why?</text>
-  <text x="230" y="430" text-anchor="middle" class="txt-danger">✘ Reasoning?</text>
-  <text x="230" y="470" text-anchor="middle" class="txt-danger">✘ Counterargument?</text>
+  <text x="230" y="350" text-anchor="middle" class="txt-success">&#10004; Correct?</text>
+  <text x="230" y="390" text-anchor="middle" class="txt-danger">&#10008; Why?</text>
+  <text x="230" y="430" text-anchor="middle" class="txt-danger">&#10008; Reasoning?</text>
+  <text x="230" y="470" text-anchor="middle" class="txt-danger">&#10008; Counterargument?</text>
 
 
   <text x="670" y="50" text-anchor="middle" class="txt-heading">NyayaBench</text>
