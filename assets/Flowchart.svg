@@ -1,34 +1,65 @@
 <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="white"/>
+  <style>
+    /* Default: GitHub Light Mode Theme Adjustments */
+    .txt-title { fill: #24292e; font-family: Arial; font-size: 22px; font-weight: bold; }
+    .txt-main { fill: #24292e; font-family: Arial; font-size: 14px; }
+    .txt-bold { fill: #24292e; font-family: Arial; font-size: 15px; font-weight: bold; }
+    .txt-muted { fill: #57606a; font-family: Arial; font-size: 12px; }
+    .box-std { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.5; }
+    .box-heavy { fill: #ddf4ff; stroke: #0969da; stroke-width: 1.5; }
+    .flow-line { stroke: #24292e; stroke-width: 1.5; }
+    .arrow-head { fill: #24292e; }
 
+    /* Automatic Switch: GitHub Dark Mode Theme Adjustments */
+    @media (prefers-color-scheme: dark) {
+      .txt-title { fill: #f0f6fc; }
+      .txt-main { fill: #c9d1d9; }
+      .txt-bold { fill: #c9d1d9; }
+      .txt-muted { fill: #8b949e; }
+      .box-std { fill: #161b22; stroke: #30363d; }
+      .box-heavy { fill: #102a45; stroke: #1f6feb; }
+      .flow-line { stroke: #8b949e; }
+      .arrow-head { fill: #8b949e; }
+    }
+  </style>
+
+  <!-- Definition for Arrowheads -->
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" fill="black" />
+      <path d="M 0 1 L 10 5 L 0 9 z" class="arrow-head" />
     </marker>
   </defs>
 
-  <text x="400" y="45" text-anchor="middle" font-size="22" font-family="Arial" font-weight="bold" fill="#333">NyayaBench Pipeline</text>
+  <!-- Title -->
+  <text x="400" y="45" text-anchor="middle" class="txt-title">NyayaBench Pipeline</text>
 
-  <rect x="300" y="80" width="200" height="50" fill="#f0f0f0" stroke="black" rx="4"/>
-  <text x="400" y="105" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Question</text>
+  <!-- Boxes -->
+  <!-- Question -->
+  <rect x="300" y="80" width="200" height="50" class="box-std" rx="4"/>
+  <text x="400" y="105" text-anchor="middle" dominant-baseline="middle" class="txt-main">Question</text>
 
-  <rect x="300" y="160" width="200" height="50" fill="#f0f0f0" stroke="black" rx="4"/>
-  <text x="400" y="185" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Language Model</text>
+  <!-- Language Model -->
+  <rect x="300" y="160" width="200" height="50" class="box-std" rx="4"/>
+  <text x="400" y="185" text-anchor="middle" dominant-baseline="middle" class="txt-main">Language Model</text>
 
-  <rect x="250" y="240" width="300" height="120" fill="#e0f0ff" stroke="black" rx="6"/>
-  <text x="400" y="265" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold">Structured Reasoning</text>
-  <text x="400" y="290" text-anchor="middle" font-family="Arial" font-size="14">Claim</text>
-  <text x="400" y="315" text-anchor="middle" font-family="Arial" font-size="14">Reason</text>
-  <text x="400" y="340" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">Evidence + Counterargument + Resolution</text>
+  <!-- Structured Reasoning Block -->
+  <rect x="250" y="240" width="300" height="120" class="box-heavy" rx="6"/>
+  <text x="400" y="265" text-anchor="middle" class="txt-bold">Structured Reasoning</text>
+  <text x="400" y="290" text-anchor="middle" class="txt-main">Claim</text>
+  <text x="400" y="315" text-anchor="middle" class="txt-main">Reason</text>
+  <text x="400" y="340" text-anchor="middle" class="txt-muted">Evidence + Counterargument + Resolution</text>
 
-  <rect x="300" y="390" width="200" height="50" fill="#f0f0f0" stroke="black" rx="4"/>
-  <text x="400" y="415" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Deterministic Audit</text>
+  <!-- Deterministic Audit -->
+  <rect x="300" y="390" width="200" height="50" class="box-std" rx="4"/>
+  <text x="400" y="415" text-anchor="middle" dominant-baseline="middle" class="txt-main">Deterministic Audit</text>
 
-  <rect x="300" y="470" width="200" height="50" fill="#f0f0f0" stroke="black" rx="4"/>
-  <text x="400" y="495" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="14">Transparent Score</text>
+  <!-- Transparent Score -->
+  <rect x="300" y="470" width="200" height="50" class="box-std" rx="4"/>
+  <text x="400" y="495" text-anchor="middle" dominant-baseline="middle" class="txt-main">Transparent Score</text>
 
-  <line x1="400" y1="130" x2="400" y2="153" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="400" y1="210" x2="400" y2="233" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="400" y1="360" x2="400" y2="383" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
-  <line x1="400" y1="440" x2="400" y2="463" stroke="black" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- Connected Flow Arrows -->
+  <line x1="400" y1="130" x2="400" y2="153" class="flow-line" marker-end="url(#arrow)"/>
+  <line x1="400" y1="210" x2="400" y2="233" class="flow-line" marker-end="url(#arrow)"/>
+  <line x1="400" y1="360" x2="400" y2="383" class="flow-line" marker-end="url(#arrow)"/>
+  <line x1="400" y1="440" x2="400" y2="463" class="flow-line" marker-end="url(#arrow)"/>
 </svg>
