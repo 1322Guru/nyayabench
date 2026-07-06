@@ -7,7 +7,7 @@ NyayaBench measures whether a language model can do something most models cannot
 The structure is drawn from *Nyaya*, the classical Indian school of logic that formalized dialectical reasoning over two thousand years ago. NyayaBench uses that structure not as a stylistic flourish, but as a rigorous test: a model passes only if its reasoning holds together, step by step, in a form a human can audit.
 
 <p align="center">
-  <img src="assets/Flowchart.svg" alt="NyayaBench Pipeline" width="100%">
+  <img src="assets/Flowchart.svg?v=1" alt="NyayaBench Pipeline" width="100%">
 </p>
 
 ---
