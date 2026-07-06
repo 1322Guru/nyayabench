@@ -1,65 +1,176 @@
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    /* Default: GitHub Light Mode Theme Adjustments */
-    .txt-title { fill: #24292e; font-family: Arial; font-size: 22px; font-weight: bold; }
-    .txt-main { fill: #24292e; font-family: Arial; font-size: 14px; }
-    .txt-bold { fill: #24292e; font-family: Arial; font-size: 15px; font-weight: bold; }
-    .txt-muted { fill: #57606a; font-family: Arial; font-size: 12px; }
-    .box-std { fill: #f6f8fa; stroke: #d0d7de; stroke-width: 1.5; }
-    .box-heavy { fill: #ddf4ff; stroke: #0969da; stroke-width: 1.5; }
-    .flow-line { stroke: #24292e; stroke-width: 1.5; }
-    .arrow-head { fill: #24292e; }
+<svg width="900" height="760" viewBox="0 0 900 760"
+xmlns="http://www.w3.org/2000/svg">
 
-    /* Automatic Switch: GitHub Dark Mode Theme Adjustments */
-    @media (prefers-color-scheme: dark) {
-      .txt-title { fill: #f0f6fc; }
-      .txt-main { fill: #c9d1d9; }
-      .txt-bold { fill: #c9d1d9; }
-      .txt-muted { fill: #8b949e; }
-      .box-std { fill: #161b22; stroke: #30363d; }
-      .box-heavy { fill: #102a45; stroke: #1f6feb; }
-      .flow-line { stroke: #8b949e; }
-      .arrow-head { fill: #8b949e; }
-    }
-  </style>
+<style>
+svg{
+    background:#0d1117;
+}
 
-  <!-- Definition for Arrowheads -->
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1 L 10 5 L 0 9 z" class="arrow-head" />
-    </marker>
-  </defs>
+.title{
+    fill:#ffffff;
+    font:700 30px Inter,Arial,sans-serif;
+}
 
-  <!-- Title -->
-  <text x="400" y="45" text-anchor="middle" class="txt-title">NyayaBench Pipeline</text>
+.text{
+    fill:#ffffff;
+    font:600 18px Inter,Arial,sans-serif;
+}
 
-  <!-- Boxes -->
-  <!-- Question -->
-  <rect x="300" y="80" width="200" height="50" class="box-std" rx="4"/>
-  <text x="400" y="105" text-anchor="middle" dominant-baseline="middle" class="txt-main">Question</text>
+.label{
+    fill:#1f2937;
+    font:600 15px Inter,Arial,sans-serif;
+}
 
-  <!-- Language Model -->
-  <rect x="300" y="160" width="200" height="50" class="box-std" rx="4"/>
-  <text x="400" y="185" text-anchor="middle" dominant-baseline="middle" class="txt-main">Language Model</text>
+.sub{
+    fill:#4b5563;
+    font:12px Inter,Arial,sans-serif;
+}
 
-  <!-- Structured Reasoning Block -->
-  <rect x="250" y="240" width="300" height="120" class="box-heavy" rx="6"/>
-  <text x="400" y="265" text-anchor="middle" class="txt-bold">Structured Reasoning</text>
-  <text x="400" y="290" text-anchor="middle" class="txt-main">Claim</text>
-  <text x="400" y="315" text-anchor="middle" class="txt-main">Reason</text>
-  <text x="400" y="340" text-anchor="middle" class="txt-muted">Evidence + Counterargument + Resolution</text>
+.line{
+    stroke:#8b949e;
+    stroke-width:2;
+    fill:none;
+}
 
-  <!-- Deterministic Audit -->
-  <rect x="300" y="390" width="200" height="50" class="box-std" rx="4"/>
-  <text x="400" y="415" text-anchor="middle" dominant-baseline="middle" class="txt-main">Deterministic Audit</text>
+.classical{
+    fill:#dff5ef;
+    stroke:#93d2c3;
+    stroke-width:1.8;
+}
 
-  <!-- Transparent Score -->
-  <rect x="300" y="470" width="200" height="50" class="box-std" rx="4"/>
-  <text x="400" y="495" text-anchor="middle" dominant-baseline="middle" class="txt-main">Transparent Score</text>
+.dialectical{
+    fill:#fde9df;
+    stroke:#efb79f;
+    stroke-width:1.8;
+}
+</style>
 
-  <!-- Connected Flow Arrows -->
-  <line x1="400" y1="130" x2="400" y2="153" class="flow-line" marker-end="url(#arrow)"/>
-  <line x1="400" y1="210" x2="400" y2="233" class="flow-line" marker-end="url(#arrow)"/>
-  <line x1="400" y1="360" x2="400" y2="383" class="flow-line" marker-end="url(#arrow)"/>
-  <line x1="400" y1="440" x2="400" y2="463" class="flow-line" marker-end="url(#arrow)"/>
+<defs>
+<marker id="arrow"
+markerWidth="10"
+markerHeight="10"
+refX="5"
+refY="5"
+orient="auto">
+<path d="M0,0 L10,5 L0,10 Z"
+fill="#8b949e"/>
+</marker>
+</defs>
+
+<!-- Title -->
+
+<text x="450"
+y="45"
+text-anchor="middle"
+class="title">
+NyayaBench Pipeline
+</text>
+
+<!-- Question -->
+
+<text x="450"
+y="95"
+text-anchor="middle"
+class="text">
+Question
+</text>
+
+<line x1="450" y1="110"
+x2="450" y2="145"
+class="line"
+marker-end="url(#arrow)"/>
+
+<!-- LM -->
+
+<text x="450"
+y="195"
+text-anchor="middle"
+class="text">
+Language Model
+</text>
+
+<line x1="450" y1="210"
+x2="450" y2="245"
+class="line"
+marker-end="url(#arrow)"/>
+
+<!-- Structured Reasoning -->
+
+<text x="450"
+y="295"
+text-anchor="middle"
+class="text">
+Structured Reasoning
+</text>
+
+<line x1="450" y1="310"
+x2="450" y2="340"
+class="line"/>
+
+<!-- Horizontal Branch -->
+
+<line x1="170" y1="340"
+x2="730" y2="340"
+class="line"/>
+
+<!-- Top Row -->
+
+<line x1="220" y1="340" x2="220" y2="370" class="line"/>
+<line x1="360" y1="340" x2="360" y2="370" class="line"/>
+<line x1="500" y1="340" x2="500" y2="370" class="line"/>
+<line x1="640" y1="340" x2="640" y2="370" class="line"/>
+
+<rect x="170" y="370" width="100" height="46" rx="8" class="classical"/>
+<text x="220" y="398" text-anchor="middle" class="label">Claim</text>
+
+<rect x="310" y="370" width="100" height="46" rx="8" class="classical"/>
+<text x="360" y="398" text-anchor="middle" class="label">Reason</text>
+
+<rect x="450" y="370" width="100" height="46" rx="8" class="classical"/>
+<text x="500" y="398" text-anchor="middle" class="label">Evidence</text>
+
+<rect x="590" y="370" width="100" height="46" rx="8" class="classical"/>
+<text x="640" y="398" text-anchor="middle" class="label">Application</text>
+
+<!-- Bottom Row -->
+
+<rect x="240" y="455" width="120" height="46" rx="8" class="classical"/>
+<text x="300" y="483" text-anchor="middle" class="label">Conclusion</text>
+
+<rect x="390" y="455" width="140" height="46" rx="8" class="dialectical"/>
+<text x="460" y="483" text-anchor="middle" class="label">Counterargument</text>
+
+<rect x="560" y="455" width="120" height="46" rx="8" class="dialectical"/>
+<text x="620" y="483" text-anchor="middle" class="label">Resolution</text>
+
+<line x1="300" y1="416" x2="300" y2="455" class="line"/>
+<line x1="460" y1="416" x2="460" y2="455" class="line"/>
+<line x1="620" y1="416" x2="620" y2="455" class="line"/>
+
+<!-- Audit -->
+
+<line x1="620" y1="501"
+x2="620" y2="545"
+class="line"
+marker-end="url(#arrow)"/>
+
+<text x="620"
+y="595"
+text-anchor="middle"
+class="text">
+Deterministic Audit
+</text>
+
+<line x1="620" y1="610"
+x2="620" y2="645"
+class="line"
+marker-end="url(#arrow)"/>
+
+<text x="620"
+y="700"
+text-anchor="middle"
+class="text">
+Transparent Score
+</text>
+
 </svg>
