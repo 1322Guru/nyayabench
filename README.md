@@ -24,6 +24,10 @@ The failure is not that the number was wrong. It is that the model gave an answe
 
 That is the gap NyayaBench is built to measure: not whether a model can produce a fluent answer, but whether it can produce a *defensible* one, reasoning that is laid out in inspectable steps, that confronts the opposing view instead of folding to it, and that signals honestly when the model does not actually know.
 
+<p align="center">
+  <img src="assets/Comparison.svg?v=1" alt="Traditional Evaluation vs NyayaBench" width="100%">
+</p>
+
 ---
 
 ## What NyayaBench measures
