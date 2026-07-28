@@ -50,3 +50,57 @@ score identically to the nominative twin.
 `tests/test_scorer_golden.py::test_sweep_*` lock the nominative path. There is
 **no** test asserting inflected forms pass yet — add one with the fix so this
 issue closes with evidence.
+
+---
+
+## KI-2: D2 scores the presence of an attribution, not its truth
+
+**Severity:** medium (awards points for citations that may be fabricated)
+**Status:** open, recorded for a future benchmark version
+**Affects:** dimension D2 (purvapaksha), the "named philosopher cited" and "source text
+identified" sub-points
+
+### What happens
+D2 awards 1 point for naming a philosopher and 1 point for identifying a source text. The
+scorer checks that a name and a title are **present and well-formed**. It does not check
+that the philosopher wrote that text, that the text exists, or that it argues what the
+response claims. A response that invents a plausible philosopher-text pairing scores the
+same as one that cites correctly.
+
+### Why it matters, measured
+This is not hypothetical. When the deployed IYRA RAG server was instructed to name a
+philosopher and a text in every Purvapaksha, a 10-run sample produced a named text in
+**9 of 10** runs and a century in 10 of 10, including two verifiably false attributions:
+
+- "Jayanta Bhatta (11th century CE) argues in Tattvachintamani". The Tattvacintamani is
+  Gangesha Upadhyaya's (14th century); Jayanta Bhatta wrote the Nyayamanjari.
+- "John Searle argues in Minds, Brains and Science (1980)". Searle's 1980 work is the paper
+  "Minds, Brains, and Programs"; "Minds, Brains and Science" is his 1984 book.
+
+Neither pairing occurs anywhere in the v10 training data. A deterministic scan of that
+dataset (`argument_audit/verify_training_citations.py` in the GuruAI repo) finds all 12
+Tattvacintamani mentions correctly crediting Gangesha or a real commentator, and 10 of 10
+sampled philosopher-text pairs factually correct. The model was not reproducing bad
+citations from training; it was inventing new ones to satisfy a required slot.
+
+### What changed outside the benchmark
+On 27 July 2026 the IYRA server was changed to name no philosopher, text, or century unless
+that name appears in a retrieved passage. Measured after the change, named text and century
+fell to 0 of 10 with all seven Nyaya steps intact. That fix is server-side only.
+
+**The rubric has not been revised and no results have been rescored.** Published scores
+stand as computed.
+
+### Proposed fix (future work)
+Split D2's citation point into presence and verifiability: award the structural point as
+now, and gate a second point on the cited pairing matching an authority list or appearing
+in a retrieved source. Requires an authority table for philosopher-text pairs and a
+decision on how to score models that decline to cite rather than cite falsely, which under
+the current rubric are penalised identically.
+
+### Guard
+No test asserts citation correctness today, only presence. Any fix should add golden cases
+with a correct pairing and a fabricated one that must score differently.
+
+### Reference
+Argument Audit, 27 July 2026: https://nyayabench.com/argument-audit.html
