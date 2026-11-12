@@ -25,11 +25,11 @@ v3 is a second scorer that sits beside v2. It never replaces v2 and never rescor
 | v2 golden tests | `tests/test_scorer_golden.py` | `383aa3afa4686fdb103e3eaa8dbc6fc423f1c3bea28b8b603c18365c554cd124` |
 | Response file (5 models x 52 questions, greedy, 8,192 tokens) | `results/baseline_run_8192_20260621_191310.json` | `af9a55eb43a314f40f5b3fad734fa0462713a9e14ac936fa05d080ac9fafc884` |
 | v2 scores of the frozen response file | `results/scored_20260621_221729.json` | `424497bc8d6e8f8aef291e4584d0a0f9ab8e7cd336337becee74e026dc7ec81f` |
-| IYRA v10 replication response file | to be created by run 1 below | recorded here before any v3 scoring |
-| IYRA v11 response file | to be created by run 2 below | recorded here before any v3 scoring |
+| IYRA v10 replication response file | `results/v3_run1_iyra_v10_replication.json` | `858b14bcac4fd33c08b6bea516139e5a3d3949a35e801874720a80677d24c1b4` |
+| IYRA v11 response file | `results/v3_run2_iyra_v11.json` | `674f630623bb356632d086311f38b47afde98dc5dd18b7b8a5663576627aae65` |
 | Base weights at Q6_K | `Qwen3-14B-Q6_K.gguf` from the Hugging Face repository `Qwen/Qwen3-14B-GGUF`, revision `530227a7d994db8eca5ab5ced2fb692b614357fd`, 12,121,937,248 bytes | `ec1f1d1421d7636a23e17645cac6fda39ee4b5f1f11e42eb09238089705ef699` (as published; the copy in `models/gguf/` matched it on 12 November 2026) |
-| Base Q6_K response file, IYRA system prompt | to be created by run 3 below | recorded here before any v3 scoring |
-| Base Q6_K response file | to be created by run 4 below | recorded here before any v3 scoring |
+| Base Q6_K response file, IYRA system prompt | `results/v3_run3_qwen3_14b_q6k_iyra_system.json` | `90d929ea286bc0882c979506efdc50925132d3ef9430d9d83dd5402d6eacb928` |
+| Base Q6_K response file | `results/v3_run4_qwen3_14b_q6k.json` | `cb74faf923c9bb4b0b7bcfc5de5c1b3b2fb397582edf1422ffec6c682c6fd9c4` |
 
 v3 scores five files and nothing else: the frozen response file, the v10 replication file, the declared v11 file and the two base files of runs 3 and 4, in one single run (section 13, step 10). The IYRA version in the frozen file is v10.
 
