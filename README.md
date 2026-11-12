@@ -72,7 +72,7 @@ The scoring methodology, including the rubric for each dimension, is documented 
 
 ## Results
 
-The benchmark was run under deterministic (greedy) decoding for reproducibility. All models received the same benchmark prompt and the same 8,192-token generation budget, in a single batch, and were scored by the same scorer. The two local models (IYRA v10 and Qwen3-14B) were called through Ollama and the three API models through OpenRouter. The IYRA model file adds its own system prompt, which also asks for the seven steps, a confidence tag and a named objection, and a repeat penalty of 1.1; no other model had either.
+The benchmark was run under deterministic (greedy) decoding for reproducibility. All models received the same benchmark prompt and the same 8,192-token generation budget, in a single batch, and were scored by the same scorer. The two local models (IYRA v10 and Qwen3-14B) were called through Ollama and the three API models through OpenRouter. The IYRA model file adds its own system prompt, which also asks for the seven steps, a confidence tag and a named objection, and a repeat penalty of 1.1; no other model had either. The Qwen3-14B base ran at Q4_K_M quantisation and IYRA at Q6_K.
 
 | Model | Pass rate | Bench score | Outcome |
 |-------|-----------|-------------|---------|
@@ -84,13 +84,13 @@ The benchmark was run under deterministic (greedy) decoding for reproducibility.
 
 Per-language pass rate for IYRA v10: English 77%, Hindi 80%, Punjabi 70%, Tamil 80%.
 
-*Conditions: greedy decoding (temperature 0.0); retrieval-free; an 8,192-token generation budget; 52 questions; single batch; identical rule-based, deterministic scorer. A model is marked Pass if it clears both thresholds: pass rate ≥ 70% and bench score ≥ 67% (per-question pass is total ≥ 6/9). An earlier run capped at 2,048 tokens truncated the more verbose models mid-answer (notably Claude and Gemini); the budget was raised to 8,192 tokens. At that budget 2 of the 52 Qwen3-14B answers reached the limit and no answer from any other model did.*
+*Conditions: greedy decoding (temperature 0.0); retrieval-free; an 8,192-token generation budget; 52 questions; single batch; identical rule-based, deterministic scorer. A model is marked Pass if it clears both thresholds: pass rate ≥ 70% and bench score ≥ 67% (per-question pass is total ≥ 6/9). An earlier run capped at 2,048 tokens truncated the more verbose models mid-answer (notably Claude and Gemini), and the 2,048-token runs also cut 4 to 8 of 52 IYRA v10 answers at the limit, depending on the run; the budget was raised to 8,192 tokens. At that budget 2 of the 52 Qwen3-14B answers reached the limit and no answer from any other model did.*
 
 IYRA's training data overlaps this benchmark. Of the 52 questions, 6 match a training question by a string-similarity rule, and by the author's reading 33 ask the same or nearly the same thing as a training question. The baseline models were not fine-tuned on this answer format. Tables restricted to the remaining questions will be published with evaluator v3.
 
-A note worth stating plainly: the leading commercial models are *more capable* than the model that tops this benchmark, in general terms. What NyayaBench measures is narrower and specific, the ability to produce **structured, auditable reasoning that holds up under a counter-argument and reports its own uncertainty.** IYRA v10 passes 76.9% of questions against 44.2% for its untuned base model (Qwen3-14B). Most benchmark questions overlap IYRA's training data (see the note above), so this difference does not show how much of the gain carries over to unseen questions.
+A note worth stating plainly: the leading commercial models are *more capable* than the model that has the highest score in the table above, in general terms. What NyayaBench measures is narrower and specific, the ability to produce **structured, auditable reasoning that holds up under a counter-argument and reports its own uncertainty.** IYRA v10 passes 76.9% of questions against 44.2% for its untuned base model (Qwen3-14B). Most benchmark questions overlap IYRA's training data (see the note above), so this difference does not show how much of the gain carries over to unseen questions.
 
-IYRA (Indic Yukti Reasoning Architecture), the model that tops this benchmark, is a separate project; NyayaBench is the open evaluation. The benchmark is model-agnostic, any model can be run against it.
+IYRA (Indic Yukti Reasoning Architecture), the model with the highest score in the table above, is a separate project; NyayaBench is the open evaluation. The benchmark is model-agnostic, any model can be run against it.
 
 ---
 
