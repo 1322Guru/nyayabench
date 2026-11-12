@@ -34,7 +34,7 @@ That is the gap NyayaBench is built to measure: not whether a model can produce 
 
 A response is evaluated as a structured reasoning chain with seven components, derived from the Nyaya Panchavayava framework and extended with explicit dialectical steps:
 
-![IYRA seven-step Nyaya reasoning flow: Purvapaksha (counter-view) leads into the classical five limbs — Pratijna, Hetu, Udaharana, Upanaya, Nigamana — and closes with Siddhanta (settled view). Purvapaksha and Siddhanta are dialectical additions to the classical five-limb syllogism.](assets/iyra_seven_step_flow.svg)
+![IYRA seven-step Nyaya reasoning flow: Purvapaksha (counter-view) leads into the classical five limbs: Pratijna, Hetu, Udaharana, Upanaya, Nigamana, and closes with Siddhanta (settled view). Purvapaksha and Siddhanta are dialectical additions to the classical five-limb syllogism.](assets/iyra_seven_step_flow.svg)
 
 | Component | Role |
 |-----------|------|
