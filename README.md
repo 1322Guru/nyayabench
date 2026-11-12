@@ -58,7 +58,7 @@ Each response is scored across five dimensions by a deterministic scorer (`evalu
 |-----------|----------------|-------|
 | **D1, Format adherence** | Are all required components present and well-formed? | 0 to 1 |
 | **D2, Pūrvapakṣa quality** | Is the counter-argument substantive, not a strawman? | 0 to 3 |
-| **D3, Confidence calibration** | Does the model signal its actual epistemic state (high / low / none)? | 0 to 2 |
+| **D3, Confidence tag** | Is a confidence tag present? 0: no tag and no hedge word. 1: a hedge word with no tag, or HIGH on a question in a domain the scorer lists as speculative, or LOW on a question in a domain the scorer lists as evidence-based. 2: any other tag (HIGH, MEDIUM, LOW or NONE). A model that writes the same tag on every answer can score 2 on every answer; D3 does not test whether the stated confidence is right. | 0 to 2 |
 | **D4, Language consistency** | Does the response stay in the question's language? | 0 to 1 |
 | **D5, Siddhānta quality** | Does the final position genuinely resolve the counter-argument? | 0 to 2 |
 
