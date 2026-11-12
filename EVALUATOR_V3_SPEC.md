@@ -3,7 +3,7 @@
 **Status: APPROVED by Gursimran Singh on 12 November 2026. No v3 code exists. Drafted 11 November 2026 and amended on 12 November 2026 with his decisions. No open item blocks approval (section 11).**
 This file is a specification only. It contains no code and no v3 scores.
 
-Sign-off: Gursimran Singh   Date: 12 November 2026   Commit of approved spec: __________
+Sign-off: Gursimran Singh   Date: 12 November 2026   Commit of approved spec: `441edf07d4be284f363cccb7d99f8b0cd80e11cc` (tag `evaluator-v3-spec-approved`)
 
 ---
 
