@@ -5,6 +5,8 @@ This file is a specification only. It contains no code and no v3 scores.
 
 Sign-off: Gursimran Singh   Date: 12 November 2026   Commit of approved spec: `441edf07d4be284f363cccb7d99f8b0cd80e11cc` (tag `evaluator-v3-spec-approved`)
 
+Amendments: Amendment 1, 12 November 2026 (section 14, tag `evaluator-v3-amendment-1`).
+
 ---
 
 ## 1. Purpose
@@ -426,3 +428,42 @@ Known before approval:
 - Runs 3 and 4 were added on 12 November 2026, after the published v2 scores of every model on the frozen file were known.
 - The stored v2 summary scores of the earlier runs (10 to 21 June 2026, each scored with the evaluator of its date) were seen on 12 November 2026, including the Qwen3-14B base at 59.6% pass in the 2,048-token run and IYRA v10 q8 at 80.8% at 8,192 tokens.
 - The v2 tier tables (52, 37 and 19 questions) are seen before v3 is built: for the frozen file straight after the spec commit (step 3), and for the new files after the four runs (step 5). No v3 rule changes after the spec commit.
+
+## 14. Amendment 1, 12 November 2026
+
+Approved by Gursimran Singh on 12 November 2026, after runs 1 to 4 and before any v3 code exists. Tag: `evaluator-v3-amendment-1`. Sections 1 to 13 are unchanged except where this section says so.
+
+**Reason.** Under Ollama 0.40.1 the request field `"think": false` adds an empty thinking block to the IYRA models' prompt, which they were not trained on. This was confirmed on a non-benchmark prompt on 12 November 2026: with the field set to false the prompt is four tokens longer and neither IYRA model opens with its confidence tag; with the field omitted both do. The base models need the field: without it they produce thinking.
+
+**Run 5 and run 6.**
+
+- Run 5: IYRA v10 (`iyra-v10-q6`). Run 6: IYRA v11 (`iyra-v11-cont2-2ep-q6`).
+- Both use the same reconstructed runner, settings and Ollama version as runs 1 to 4, with the `"think"` field omitted from the request. The runner gains one option for this. That change is committed before run 5.
+- Runs 1 to 4 and their files are unchanged and stay published.
+- Run 5 follows run 4 and run 6 follows run 5. Runs 1 to 6 are the only generation runs that are part of v3.
+
+| Input | Path (repo-relative) | SHA-256 |
+|---|---|---|
+| IYRA v10 response file, think field omitted | to be created by run 5 | recorded here before any v3 scoring |
+| IYRA v11 response file, think field omitted | to be created by run 6 | recorded here before any v3 scoring |
+
+**Scoring and tables.**
+
+- v3 scores seven files in its single run: the five named in section 2 and the two files of runs 5 and 6. This replaces the count of five in section 2 and in step 10 of section 13.
+- The two new rows are labelled "IYRA v10, think field omitted" and "IYRA v11, think field omitted". They are printed in all three tables beside the existing rows.
+- The three tier tables under evaluator v2, unchanged, are reported for the two new files as well.
+- The number of run 5 and run 6 responses that contain a think block is reported.
+
+**Reported for run 5.** The number of the 52 responses that are byte-identical to the IYRA v10 responses in the frozen file, and the number of v2 pass or fail changes against the frozen file. The wording rule of section 2, run 1 applies: "replicated" is used only at 52 of 52.
+
+**Comparisons.**
+
+- The effect of the fine-tune is reported both ways: the run 1 row minus the run 3 row, and the run 5 row minus the run 3 row.
+- The paired bootstrap of section 10 is also reported for the run 6 row minus the run 5 row.
+- Each is reported for all three tables, with D3 and without D3, with the point estimate.
+
+**Noise floor.** Not changed. It stays 12 questions: the number of pass or fail changes between the frozen v10 row and the run 1 row (section 10).
+
+**Limitation added by this amendment.** The request is no longer the same for every local row. Runs 5 and 6 omit the `"think"` field; runs 1 to 4 send it as false. For the base models the field suppresses thinking. For the IYRA models, omitting it restores the prompt format they were trained on.
+
+**Prior exposure.** This amendment was made after the v2 scores of runs 1 to 4 had been seen: the tier tables, the English and Indic breakdown and the D3 counts of 12 November 2026. Its expected effect on the IYRA rows under v2 was known when it was made, because the opening tag earns D3 points.
