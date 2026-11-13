@@ -30,9 +30,15 @@ What it adds, and why
     A STOP file in the repo root, or in its parent folder, stops the job
     cleanly before the next question.
 
+Amendment 1 (spec section 14, commit 9a2d868a8e395af3332ad93bd452a5cc61bf846f,
+tag evaluator-v3-amendment-1)
+    Runs 5 and 6 are IYRA v10 and IYRA v11 with the "think" field omitted from
+    the request. Everything else in the call is the same. Runs 1 to 4 keep
+    "think": false, and their payload is unchanged by this option.
+
 Usage
     python3 run_declared_v3.py                 run 1 to 4 in order
-    python3 run_declared_v3.py --runs 3,4      only these runs, in this order
+    python3 run_declared_v3.py --runs 5,6      only these runs, in this order
     python3 run_declared_v3.py --status        print progress, call no model
 
 This script scores nothing.
@@ -62,6 +68,7 @@ LOG_PATH = RESULTS / "v3_declared_runs.log"
 LOCK_PATH = RESULTS / "v3_declared_runs.lock"
 
 SPEC_COMMIT = "441edf07d4be284f363cccb7d99f8b0cd80e11cc"
+AMENDMENT_1_COMMIT = "9a2d868a8e395af3332ad93bd452a5cc61bf846f"
 SYSTEM_PROMPT_SHA256 = "70f1562d8c8fa69b291bb52903f4a136d6a27d65b1be3469b89eca3e94c0c2bc"
 
 # Settings recorded in the frozen file's metadata. Same keys, same values.
@@ -81,6 +88,13 @@ RUNS = {
     4: {"model_key": "qwen3-14b-q6k", "ollama_model": "qwen3-14b-q6k", "label": "Qwen3-14B base Q6_K",
         "stem": "v3_run4_qwen3_14b_q6k",
         "note": "declared run 4: base at Q6_K, no system prompt in the model file, repeat penalty 1"},
+    # Amendment 1: the "think" field is omitted from the request. "think": None means omitted.
+    5: {"model_key": "iyra-v10-think-omitted", "ollama_model": "iyra-v10-q6",
+        "label": "IYRA v10, think field omitted", "stem": "v3_run5_iyra_v10_think_omitted", "think": None,
+        "note": "declared run 5, amendment 1: IYRA v10 served as iyra-v10-q6, think field omitted from the request"},
+    6: {"model_key": "iyra-v11-think-omitted", "ollama_model": "iyra-v11-cont2-2ep-q6",
+        "label": "IYRA v11, think field omitted", "stem": "v3_run6_iyra_v11_think_omitted", "think": None,
+        "note": "declared run 6, amendment 1: IYRA v11 served as iyra-v11-cont2-2ep-q6, think field omitted from the request"},
 }
 
 log = logging.getLogger("run_declared_v3")
@@ -121,8 +135,9 @@ def sha256_file(path):
     return h.hexdigest()
 
 
-def call_ollama(model_name, prompt):
-    """The tracked call_ollama, with the frozen file's two extra settings: 8,192 new tokens and num_ctx."""
+def call_ollama(model_name, prompt, think=False):
+    """The tracked call_ollama, with the frozen file's two extra settings: 8,192 new tokens and num_ctx.
+    think=False sends "think": false, as runs 1 to 4 do. think=None omits the field (amendment 1)."""
     payload = {"model": model_name,
                "prompt": f"<|system|>\n{SYSTEM_PROMPT}\n<|user|>\n{prompt}\n<|assistant|>\n",
                "stream": False,
@@ -131,6 +146,8 @@ def call_ollama(model_name, prompt):
                            "num_predict": GENERATION_PARAMS["max_tokens"],
                            "top_p": GENERATION_PARAMS["top_p"],
                            "num_ctx": GENERATION_PARAMS["num_ctx"]}}
+    if think is None:
+        del payload["think"]
     t0 = time.time()
     r = requests.post(OLLAMA_URL, json=payload, timeout=CALL_TIMEOUT)
     r.raise_for_status()
@@ -143,12 +160,12 @@ def call_ollama(model_name, prompt):
             "done_reason": d.get("done_reason")}
 
 
-def generate_with_retry(key, model_name, prompt):
+def generate_with_retry(key, model_name, prompt, think=False):
     """The tracked retry wrapper: same delays, same error record. Every retry is logged."""
     last_err = None
     for attempt in range(len(RETRY_DELAYS) + 1):
         try:
-            out = call_ollama(model_name, prompt)
+            out = call_ollama(model_name, prompt, think)
             out["attempts"] = attempt + 1
             return out
         except Exception as e:
@@ -255,7 +272,9 @@ def run_one(run, questions):
     log.info("=" * 60)
     log.info(f"run {run}: {cfg['label']} as {cfg['ollama_model']}; Ollama {version}; "
              f"{len(finished)} of {len(questions)} already on disk; start number {rs['starts']}")
-    log.info(f"run {run}: model digest {info['digest']}, quantization {info['quantization']}")
+    think = cfg.get("think", False)
+    think_field = "omitted" if think is None else "false"
+    log.info(f"run {run}: model digest {info['digest']}, quantization {info['quantization']}, think field {think_field}")
     log.info("=" * 60)
 
     with open(p["partial"], "a", encoding="utf-8") as fpart:
@@ -269,7 +288,7 @@ def run_one(run, questions):
             prompt = q.get("prompt") or q.get("question") or q.get("text")
             lang = q.get("language", "unknown")
             log.info(f"[run {run}] [{n}/{len(questions)}] Q{qid} {lang} -> {cfg['label']}")
-            r = generate_with_retry(key, cfg["ollama_model"], prompt)
+            r = generate_with_retry(key, cfg["ollama_model"], prompt, think)
             if r.get("error"):
                 log.error(f"[run {run}] Q{qid} has no answer after {r['attempts']} attempts: {r['error']}. "
                           f"Job stopped; nothing was stored for this question. Run again to resume.")
@@ -308,6 +327,8 @@ def run_one(run, questions):
                  "models": {key: {"kind": "ollama", "ollama_model": cfg["ollama_model"], "label": cfg["label"]}},
                  "declared_run": {
                      "run": run, "spec_commit": SPEC_COMMIT,
+                     "amendment_1_commit": AMENDMENT_1_COMMIT if run in (5, 6) else None,
+                     "think_field": think_field,
                      "runner": {"file": Path(__file__).name, "sha256": sha256_file(Path(__file__).resolve())},
                      "ollama_version_start": version, "ollama_version_end": end_version,
                      "ollama_versions_seen": sorted({r["_meta"].get("ollama_version") for r in recs}),
