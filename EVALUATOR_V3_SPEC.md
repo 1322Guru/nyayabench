@@ -444,8 +444,8 @@ Approved by Gursimran Singh on 12 November 2026, after runs 1 to 4 and before an
 
 | Input | Path (repo-relative) | SHA-256 |
 |---|---|---|
-| IYRA v10 response file, think field omitted | to be created by run 5 | recorded here before any v3 scoring |
-| IYRA v11 response file, think field omitted | to be created by run 6 | recorded here before any v3 scoring |
+| IYRA v10 response file, think field omitted | `results/v3_run5_iyra_v10_think_omitted.json` | `496183b18c9dcb404369db8559bdda8a7be935f7e22f3d3d5d7c0523f1c4f5d2` |
+| IYRA v11 response file, think field omitted | `results/v3_run6_iyra_v11_think_omitted.json` | `b837ebebe8f3109956be56da9f9a26dfe0da002ada905e7401913cc3a6abab03` |
 
 **Scoring and tables.**
 
